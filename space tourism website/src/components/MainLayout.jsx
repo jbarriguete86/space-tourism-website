@@ -1,13 +1,24 @@
 import React from 'react'
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 import Header from "./Header"
-import Styles from "./components.css"
+import styles from "./components.module.css"
 
 export default function MainLayout(){
+    const location = useLocation()
+
+    const containerClassName = location.pathname === "/" ? 
+    `${styles.main_container} ${styles.home_bckg}` 
+    :
+    location.pathname.startsWith("/destination/") ? `${styles.main_container} ${styles.destination_bckg}` 
+    :
+    location.pathname.startsWith("/crew/") ? `${styles.main_container} ${styles.crew_bckg}` 
+    :
+    `${styles.main_container} ${styles.technology_bckg}`
+    
+
     return (
-        <div className={Styles.main_container}>
+        <div className={containerClassName}>
             <Header/>
-            <h2>Hello</h2>
             <Outlet/>
         </div>
     )

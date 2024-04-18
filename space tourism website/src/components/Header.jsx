@@ -1,62 +1,79 @@
-import React from "react"
+import React, {useState} from "react"
 import { NavLink } from "react-router-dom"
-import Styles from "./components.css"
+import styles from "./components.module.css"
 import HamburgerIcon from "../assets/shared/icon-hamburger.svg"
 import logo from "../assets/shared/logo.svg"
 
 export default function Header() {
+
+    const [navStatus, setNavStatus]=useState(false)
+
+
     const activeStyles = {
-        fontWeight: "bold",
-        textDecoration: "underline",
-        color: "#161616"
+        borderRight: "4px #FFFFFF solid"
     }
 
-
+ function handleNav(){
+    setNavStatus(prevStatus=> !prevStatus)
+ }
     return (
         <header>
             <img
                 src={logo}
-                className={Styles.logo_icon}
+                className={styles.logo_icon}
                 alt="the logo icon"
             />
-        <div className={Styles.hero}>
-            <img
+            {navStatus ? 
+            (<p 
+                className={styles.close_icon}
+                onClick={handleNav}
+                >
+                X
+                </p>)
+            :
+            (<img
+                className={styles.hamburger_icon}
                 src={HamburgerIcon}
-                className={Styles.hamburger_icon}
                 alt="the hamburguer icon"
-            />
-
-        </div>
+                onClick={handleNav}
+            />)
+            }
+            {navStatus && (
             <nav>
                 <NavLink
-                    className={Styles.header_nav}
-                    to="/"
+                    className={styles.header_nav}
+                    to="."
                     style={({ isActive }) => isActive ? activeStyles : null}
+                    onClick={handleNav}
                 >
-                    01 Home
+                <span>00 </span> Home
                 </NavLink>
                 <NavLink
-                    className={Styles.header_nav}
-                    to="/destination"
+                    className={styles.header_nav}
+                    to="/destination/moon"
                     style={({ isActive }) => isActive ? activeStyles : null}
+                    onClick={handleNav}
                 >
-                    01 Destination
+                <span>01 </span> Destination
                 </NavLink>
                 <NavLink
-                    className={Styles.header_nav}
-                    to="/crew"
+                    className={styles.header_nav}
+                    to="/crew/douglas_harley"
                     style={({ isActive }) => isActive ? activeStyles : null}
+                    onClick={handleNav}
                 >
-                    02 Crew
+                <span>02 </span> Crew
                 </NavLink>
                 <NavLink 
-                    className={Styles.header_nav}
-                    to="/technology"
+                    className={styles.header_nav}
+                    to="/technology/launch_vehicle"
                     style={({ isActive }) => isActive ? activeStyles : null}
+                    onClick={handleNav}
                 >
-                    03 Technology
+                <span>03 </span> Technology
                 </NavLink>
             </nav>
+            )}
         </header>
     )
 }

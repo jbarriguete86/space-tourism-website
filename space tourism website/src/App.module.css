@@ -1,0 +1,144 @@
+.home_container,
+.crew_container,
+.destination_container,
+.technology_container{
+  display: grid;
+  padding: 1.5em;
+}
+
+/* HOME PAGE */
+
+.home_container{
+  gap: 16px;
+}
+
+.title_home{
+  font-family: "Bellefair", serif;
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+.subtitle_home{
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  
+}
+
+.text_home{
+  font-size: .94rem;
+  line-height: 25px;
+}
+
+
+.btn_home{
+  background-color: white;
+  width: 150px;
+  border-radius: 50%;
+  position: relative;
+  margin: 75px auto 0;
+  padding: 69px 7.5px;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  z-index: 1;
+}
+
+.btn_home::after{
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.btn_home:hover::after,
+.btn_home:focus::after{
+  transform: scale(1.5);
+}
+
+/* DESTINATION PAGE */
+.destination_container{
+
+}
+
+.img_destination{
+  width: 170px;
+  margin: 0 auto 26px;;
+}
+
+.nav_destination{
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+}
+
+.link_destination{
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.87rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+
+}
+
+.title_destination{
+  margin-top: 20px;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text_destination{
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 25px;
+}
+
+.destination_container > hr{
+  margin: 32px 0;
+  border: none;
+  border-top: 1px solid #979797;
+}
+
+.subtitle_container_destination{
+ display: flex;
+ flex-direction: column;
+ margin-bottom: 32px;
+ justify-content: center;
+ align-items: center;
+ gap: 12px;
+}
+
+.subtitle_destination,
+.subtitle_text_destination{
+  text-transform: uppercase;
+}
+
+.subtitle_destination{
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.subtitle_text_destination{
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+}
