@@ -11,6 +11,7 @@
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1rem;
   font-weight: 400;
+  color: #FFFFFF;
   text-transform: uppercase;
   text-align: center;
 }
@@ -32,6 +33,7 @@
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
+  color: #FFFFFF;
 
 }
 
@@ -84,11 +86,56 @@
   transform: scale(1.5);
 }
 
+/* MAIN ELEMENTS  */
+.titles,
+.subtitles_text{
+  color: #FFFFFF;
+}
+
+.titles{
+  margin-top: 20px;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.titles_sm{
+  font-size: 1.5rem;
+  color:#FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+
+}
+
+.main_text{
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 25px;
+}
+
+.text_crew{
+  line-height: 25px;
+}
+
+.subtitles{
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.subtitles_text{
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
 /* DESTINATION PAGE */
 
 .img_destination{
   width: 170px;
-  margin: 0 auto 26px;;
+  margin: 0 auto 26px;
 }
 
 .nav_destination{
@@ -111,21 +158,6 @@
   border-bottom: 4px #979797 solid;
 }
 
-.title_destination{
-  margin-top: 20px;
-  font-family: "Bellefair", serif;
-  font-weight: 400;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.text_destination{
-  margin-top: 10px;
-  font-size: 0.875rem;
-  line-height: 25px;
-}
-
 .destination_container > hr{
   margin: 32px 0;
   border: none;
@@ -141,19 +173,46 @@
  gap: 12px;
 }
 
-.subtitle_destination,
+.subtitles,
 .subtitle_text_destination{
   text-transform: uppercase;
 }
 
-.subtitle_destination{
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-size: 0.95rem;
+
+/* CREW PAGE */
+
+
+.crew_container{
+  text-align: center;
 }
 
-.subtitle_text_destination{
-  font-family: "Bellefair", serif;
-  font-weight: 400;
-  font-size: 1.75rem;
+.img_crew{
+  width: 327px;
+  margin: 0 auto 0;
+  
 }
+
+.nav_crew{
+  margin: 0;
+}
+
+.link_crew{
+  font-size: 8rem;
+  text-decoration: none;
+  line-height: 0;
+  color: #979797;
+}
+
+
+.position_crew{
+  font-size: 1rem;
+  color: #979797;
+  text-transform: uppercase;
+  margin: 2em 0 .5em;
+}
+
+/* TECHNOLOGY PAGE */
+.technology_container{
+  width: 100%;
+}
+

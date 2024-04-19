@@ -62,16 +62,16 @@ export default function Destination(){
                     Titan
                 </NavLink>
             </div>
-            <p className={styles.title_destination}>{data.title}</p>
-            <p className={styles.text_destination}>{data.text}</p>
+            <p className={styles.titles}>{data.title}</p>
+            <p className={styles.main_text}>{data.text}</p>
             <hr />
             <div className={styles.subtitle_container_destination}>
-                <p className={styles.subtitle_destination}>avg. distance</p>
-                <p className={styles.subtitle_text_destination}>{data.distance}</p>
+                <p className={styles.subtitles}>avg. distance</p>
+                <p className={styles.subtitles_text}>{data.distance}</p>
             </div>
             <div className={styles.subtitle_container_destination}>
-                <p className={styles.subtitle_destination}>Est. Travel time</p>
-                <p className={styles.subtitle_text_destination}>{data.travelTime}</p>
+                <p className={styles.subtitles}>Est. Travel time</p>
+                <p className={styles.subtitles_text}>{data.travelTime}</p>
             </div>
         </div>
     )
