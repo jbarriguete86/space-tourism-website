@@ -6,6 +6,20 @@
   padding: 1.5em;
 }
 
+.pages_title{
+  margin-bottom: 2.6em;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.pages_title > span{
+  color: #979797;
+  margin-right: .65em;
+}
+
 /* HOME PAGE */
 
 .home_container{
@@ -71,9 +85,6 @@
 }
 
 /* DESTINATION PAGE */
-.destination_container{
-
-}
 
 .img_destination{
   width: 170px;
@@ -94,6 +105,10 @@
   text-decoration: none;
   text-transform: uppercase;
 
+}
+
+.link_destination:hover{
+  border-bottom: 4px #979797 solid;
 }
 
 .title_destination{

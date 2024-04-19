@@ -8,13 +8,13 @@ import europaPic from "../assets/destination/image-europa.webp"
 import titanPic from "../assets/destination/image-titan.png"
 
 export default function Destination(){
-    const [homeData, setHomeData]= useState({})
+    const [data, setData]= useState({})
     const location=useParams()
 
 
     useEffect(()=>{
-            const data = destinationData.find(data => data.title.toLocaleLowerCase() === location.name)
-            setHomeData(data)
+            const dat = destinationData.find(data => data.title.toLocaleLowerCase() === location.name)
+            setData(dat)
     },[location])
 
     const activeStyles = {
@@ -29,7 +29,8 @@ export default function Destination(){
 
     return (
         <div className={styles.destination_container}>
-            {homeData.title && <img className={styles.img_destination} src={getPicture(location.name)} alt="image of the planet"/>}
+            <p className={styles.pages_title}><span>01</span>Pickup your destination</p>
+            {data.title && <img className={styles.img_destination} src={getPicture(location.name)} alt="image of the planet"/>}
             <div className={styles.nav_destination}>
                 <NavLink
                     className={styles.link_destination}
@@ -61,16 +62,16 @@ export default function Destination(){
                     Titan
                 </NavLink>
             </div>
-            <p className={styles.title_destination}>{homeData.title}</p>
-            <p className={styles.text_destination}>{homeData.text}</p>
+            <p className={styles.title_destination}>{data.title}</p>
+            <p className={styles.text_destination}>{data.text}</p>
             <hr />
             <div className={styles.subtitle_container_destination}>
                 <p className={styles.subtitle_destination}>avg. distance</p>
-                <p className={styles.subtitle_text_destination}>{homeData.distance}</p>
+                <p className={styles.subtitle_text_destination}>{data.distance}</p>
             </div>
             <div className={styles.subtitle_container_destination}>
                 <p className={styles.subtitle_destination}>Est. Travel time</p>
-                <p className={styles.subtitle_text_destination}>{homeData.travelTime}</p>
+                <p className={styles.subtitle_text_destination}>{data.travelTime}</p>
             </div>
         </div>
     )

@@ -58,7 +58,7 @@ export default function Header() {
                 </NavLink>
                 <NavLink
                     className={styles.header_nav}
-                    to="/crew/douglas_harley"
+                    to="/crew/douglas_hurley"
                     style={({ isActive }) => isActive ? activeStyles : null}
                     onClick={handleNav}
                 >
