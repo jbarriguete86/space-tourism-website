@@ -65,13 +65,15 @@ export default function Destination(){
             <p className={styles.titles}>{data.title}</p>
             <p className={styles.main_text}>{data.text}</p>
             <hr />
-            <div className={styles.subtitle_container_destination}>
-                <p className={styles.subtitles}>avg. distance</p>
-                <p className={styles.subtitles_text}>{data.distance}</p>
-            </div>
-            <div className={styles.subtitle_container_destination}>
-                <p className={styles.subtitles}>Est. Travel time</p>
-                <p className={styles.subtitles_text}>{data.travelTime}</p>
+            <div className={styles.info_destination_container}>
+                <div className={styles.subtitle_container_destination}>
+                    <p className={styles.subtitles}>avg. distance</p>
+                    <p className={styles.subtitles_text}>{data.distance}</p>
+                </div>
+                <div className={styles.subtitle_container_destination}>
+                    <p className={styles.subtitles}>Est. Travel time</p>
+                    <p className={styles.subtitles_text}>{data.travelTime}</p>
+                </div>
             </div>
         </div>
     )

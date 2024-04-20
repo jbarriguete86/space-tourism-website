@@ -1,6 +1,6 @@
 /* MAIN LAYOUT COMPONENT */
 .main_container{
-    height: 100vh;
+    height: 100%;
     
     
 }
@@ -12,7 +12,7 @@
 }
 
 .destination_bckg{
-    background:url("../assets/destination/background-destination-tablet.jpg") no-repeat;
+    background:url("../assets/destination/background-destination-tablet.jpg") no-repeat ;
     background-size: 100% 100%;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .technology_bckg{
-    background: url("../assets/technology/background-technology-mobile.jpg") no-repeat;
+    background: url("../assets/technology/background-technology-mobile.jpg") no-repeat ;
     background-size: 100% 100%;
 }
 
@@ -62,6 +62,7 @@ nav{
 .hamburger_icon,
 .close_icon{
     z-index: 1;
+    cursor: pointer;
 }
 
 .header_nav{
@@ -80,3 +81,69 @@ nav{
     font-weight: 700;
     margin-right: 12px;
 }
+/* TABLET MODE */
+
+@media screen and (min-width: 768px) {
+  
+    .home_bckg{
+        background:url("../assets/homepage/background-home-tablet.jpg") no-repeat;
+        background-size: 100% 100%;
+        
+    }
+    
+    .destination_bckg{
+        background:url("../assets/destination/background-destination-tablet.jpg") no-repeat ;
+        background-size: 100% 100%;
+    }
+    
+    .crew_bckg{
+        background:url("../assets/crew/background-crew-tablet.jpg") no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .technology_bckg{
+        background: url("../assets/technology/background-technology-tablet.jpg") no-repeat ;
+        background-size: 100% 100%;
+    }
+
+    header{
+        gap: 10em;
+        padding:0 0 0 1.5em;
+        margin-bottom: 1em;;
+    }
+
+    .hamburger_icon,
+    .close_icon{
+        display: none;
+    }
+
+    header > nav{
+        position:initial;
+        width: 70%;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 3em;
+    }
+    
+    .header_nav{
+        display: flex;
+        align-items: center;
+        height: 8em;
+        text-align: center;
+        
+        
+    }
+    
+    .header_nav:hover{
+        border-right: none;
+        border-bottom: 4px #979797 solid;
+    }
+    
+    .header_nav > span{
+        font-weight: 700;
+        margin-right: 12px;
+    }
+   
+  }

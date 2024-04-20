@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { NavLink } from "react-router-dom"
 import styles from "./components.module.css"
 import HamburgerIcon from "../assets/shared/icon-hamburger.svg"
@@ -7,11 +7,28 @@ import logo from "../assets/shared/logo.svg"
 export default function Header() {
 
     const [navStatus, setNavStatus]=useState(false)
+    const [notMobile, setNotMobile]= useState(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth >= 768) {
+            setNavStatus(true)
+            setNotMobile(true)
+          } else {
+            setNavStatus(false)
+            setNotMobile(false)
+          }
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+      }, [navStatus])
 
 
-    const activeStyles = {
-        borderRight: "4px #FFFFFF solid"
-    }
+
+    let activeStyles = notMobile ? {borderBottom: "4px #FFFFFF solid"} : {borderRight: "4px #FFFFFF solid"}
+
 
  function handleNav(){
     setNavStatus(prevStatus=> !prevStatus)

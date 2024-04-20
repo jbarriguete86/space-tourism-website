@@ -5,9 +5,6 @@ import Crew from "./pages/Crew"
 import Destination from "./pages/Destination"
 import Technology from "./pages/Technology"
 import MainLayout from "./components/MainLayout"
-import CrewLayout from "./components/CrewLayout"
-import DestinationLayout from "./components/DestinationLayout"
-import TechnologyLayout from "./components/TechnologyLayout"
 
 
 function App() {

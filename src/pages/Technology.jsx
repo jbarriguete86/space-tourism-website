@@ -24,7 +24,8 @@ function getPicture(name){
 }
 
 const activeStyles = {
-    color: "#FFFFFF"
+    color: "black",
+    backgroundColor: "#FFFFFF"
 }
 
     return (
@@ -49,14 +50,14 @@ const activeStyles = {
                 </NavLink>
                 <NavLink
                     className={styles.link_technology}
-                    to="/tecnology/space_capsule"
+                    to="/technology/space_capsule"
                     style={({ isActive }) => isActive ? activeStyles : null}
                 >
                     3
                 </NavLink>
             </div>
             <p className={styles.subtitles}>The terminology...</p>
-            <p className={styles.name_sm}>{data.name}</p>
+            <p className={styles.titles_sm}>{data.name}</p>
             <p className={styles.main_text}>{data.text}</p>
                
         </div>
