@@ -37,6 +37,10 @@ header{
     background: none;
 }
 
+header > hr{
+    display: none;
+}
+
 nav{
     z-index: 0;
     width: 80%;
@@ -146,4 +150,70 @@ nav{
         margin-right: 12px;
     }
    
+  }
+
+  /* DESKTOP MODE */
+
+  @media screen and (min-width: 1024px ){
+    .home_bckg{
+        background:url("../assets/homepage/background-home-desktop.jpg") no-repeat;
+        background-size: 100% 100%;
+        
+    }
+    
+    .destination_bckg{
+        background:url("../assets/destination/background-destination-desktop.jpg") no-repeat ;
+        background-size: 100% 100%;
+    }
+    
+    .crew_bckg{
+        background:url("../assets/crew/background-crew-desktop.jpg") no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .technology_bckg{
+        background: url("../assets/technology/background-technology-desktop.jpg") no-repeat ;
+        background-size: 100% 100%;
+    }
+
+    header{
+        position: relative;
+        gap: 10em;
+        height: 96px;
+        /* padding:0 0 0 1.5em; */
+        padding: 4em 0 1em 3.40em;
+    }
+
+    header > hr{
+        position: absolute;
+        display: inline;
+        width: 38%;
+        z-index: 1;
+        left: 9.5em;
+        border: none;
+        border-top: .04px solid #979797;
+    }
+
+
+    header > nav{
+        width: 55%;
+        gap: 48px;
+        height: 60px;
+    }
+    
+    .header_nav{
+        height: 100%;
+        
+        
+    }
+    
+    .header_nav:hover{
+        border-right: none;
+        border-bottom: 4px #979797 solid;
+    }
+    
+    .header_nav > span{
+        font-weight: 700;
+        margin-right: 12px;
+    }
   }

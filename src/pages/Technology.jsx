@@ -5,10 +5,14 @@ import technologyData from "../pageData/technologyData.js"
 import launchPicLands from "../assets/technology/image-launch-vehicle-landscape.jpg"
 import spacePortPicLands from "../assets/technology/image-spaceport-landscape.jpg"
 import spaceCapsulePicLands from "../assets/technology/image-space-capsule-landscape.jpg"
+import launchPortrait from "../assets/technology/image-launch-vehicle-portrait.jpg"
+import spacePortPortrait from "../assets/technology/image-spaceport-portrait.jpg"
+import spaceCapsulePortrait from "../assets/technology/image-space-capsule-portrait.jpg"
 
 
 export default function Technology(){
     const [data, setData]= useState({})
+    const [desktop, setdesktop]= useState(false)
     const location = useParams()
 
     useEffect(()=>{
@@ -16,10 +20,28 @@ export default function Technology(){
             const info = location.name.split("_").map(string => string).join(' ')
             return data.name.toLocaleLowerCase() === info})
         setData(dat)
+
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+              setdesktop(true)
+            } else {
+              setdesktop(false)
+            }
+          };
+  
+          handleResize();
+  
+          window.addEventListener('resize', handleResize);
 },[location])
 
+
+
 function getPicture(name){
-   return name === "launch_vehicle" ? launchPicLands : name === "spaceport" ? spacePortPicLands :  spaceCapsulePicLands
+    if(!desktop){
+        return name === "launch_vehicle" ? launchPicLands : name === "spaceport" ? spacePortPicLands :  spaceCapsulePicLands
+    } else{
+        return name === "launch_vehicle" ? launchPortrait : name === "spaceport" ? spacePortPortrait :  spaceCapsulePortrait
+    }
 
 }
 

@@ -27,6 +27,7 @@
 .titles,
 .subtitles_text{
   color: #FFFFFF;
+  text-transform: uppercase;
 }
 
 .titles{
@@ -114,6 +115,7 @@
   text-transform: uppercase;
   color: black;
   z-index: 1;
+  cursor: pointer;
 }
 
 .btn_home::after{
@@ -284,36 +286,45 @@
 
 @media screen and (min-width: 768px) {
   
-  .home_container,
-.crew_container{
-  padding: 8em 9.75em 1em;
+  .pages_title{
+    text-align: left;
+    margin-bottom: 1em;
+    font-size: 1.25rem;
+  }
+  
+  .main_text{
+    padding: 0 6.5em 1em;
+    font-size: 1rem;
+  }
+
+  .home_container{
+  padding: 6em 9.75em 1em;
 }
 
 .title_home{
   font-size: 9.30rem;
+  margin-bottom: .2em;
+  margin-top: .2em;
 }
 
 .subtitle_home{
   font-size: 1.25rem;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
 }
 
-  .btn_home{
-    width: 242px;
-    height: 242px;
-    font-size: 2rem;
-  }
+.home_container > .main_text{
+  margin-top: 3em;
+}
 
-  .main_text{
-    font-size: 1rem;
-  }
+.btn_home{
+  width: 242px;
+  height: 242px;
+  font-size: 2rem;
+  margin-top: 2em
+}
 
-    .pages_title{
-      text-align: left;
-    }
 
-  .destination_container{
-    padding: 0 6.5em 1em;
-  }
 
   .img_destination{
     width: 300px;
@@ -327,7 +338,7 @@
   }
 
   .destination_container > hr{
-    margin: 0 0;
+    margin: 3em 0 0;
   }
 
 
@@ -335,11 +346,265 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* min-height: 100px; */
-    padding: 0;
+    padding-top: 2em;
   }
 
   .subtitle_container_destination{
     padding-bottom: 3em;
+  }
+
+  .crew_container{
+    grid-template: repeat(9, auto)/repeat(6, 1fr);
+    grid-template-areas: 
+    "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle"
+    "position position position position position position"
+    "crewTitle crewTitle crewTitle crewTitle crewTitle crewTitle"
+    "......... ......... ......... ......... ......... ........"
+    "crewText crewText crewText crewText crewText crewText"
+    "......... ......... ......... ......... ......... ........"
+    "crewNav crewNav crewNav crewNav crewNav crewNav"
+    "......... ......... ......... ......... ......... ........"
+    "crewImage crewImage crewImage crewImage crewImage crewImage";
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+
+  }
+
+  .crew_container > .pages_title{
+    grid-area: mainTitle;
+    margin-bottom: 0;
+  }
+
+  .img_crew{
+    grid-area: crewImage;
+    width: 368px;
+  }
+
+  .nav_crew{
+    grid-area: crewNav;
+  }
+
+  .position_crew{
+    grid-area: position;
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+
+  .crew_container > .titles_sm{
+    grid-area: crewTitle;
+    font-size: 2.5rem;
+  }
+
+  .crew_container > .main_text{
+    grid-area: crewText;
+    padding-bottom: 0;
+  }
+
+  .technology_container > .pages_title{
+    padding-left: 1.5em;
+    margin-bottom: 0;
+  }
+
+  .img_technology{
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+
+  .nav_technology{
+    margin-top: 0;
+  }
+
+  .link_technology{
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  .technology_container > .subtitles{
+    font-size: 1rem;
+  }
+  
+  .technology_container > .titles_sm{
+    font-size: 2.5rem;
+    padding-bottom: 0;
+  }
+
+  .technology_container > .main_text{
+    padding: 0 9.75em 1em;
+  }
+}
+
+/* DESKTOP MODE */
+
+@media screen and (min-width: 1024px ) {
+  .home_container{
+    padding: 15.68em  10.13em  8.18em;
+    grid-template: repeat(3, auto) / repeat(3, 1fr);
+    grid-template-areas: 
+    "subtitleHome . ."
+    "titleHome . homeBtn"
+    "homeText . homeBtn";
+  }
+
+  .title_home,
+  .subtitle_home,
+  .home_container > .main_text{
+    text-align: left;
+    padding-left: 0;
+    
+  }
+
+  .subtitle_home{
+    grid-area: subtitleHome;
+  }
+
+  .title_home{
+    grid-area: titleHome;
+  }
+
+  .home_container > .main_text{
+    grid-area: homeText;
+  }
+
+  .btn_home{
+    grid-area: homeBtn;
+  }
+
+  .destination_container{
+    grid-template: repeat(6, auto) / repeat(2, 1fr);
+    grid-template-areas: 
+    "destinationPageTitle ."
+    "destinationPicture destinationNav"
+    "destinationPicture destinationTitle"
+    "destinationPicture destinationText"
+    "destinationPicture destinationHr"
+    "destinationPicture destinationInnerNav";
+
+    padding: 4.7em 0 7em 10em;
+  }
+
+  .destination_container > .pages_title{
+    grid-area: destinationPageTitle;
+  }
+
+  .img_destination{
+    grid-area: destinationPicture;
+    width: 70%;
+    margin: auto;
+  }
+
+  .nav_destination{
+    grid-area: destinationNav;
+  }
+
+  .destination_container > .titles{
+    grid-area: destinationTitle;
+  }
+
+  .destination_container > .main_text{
+    grid-area: destinationText;
+  }
+
+  .destination_container > hr {
+    grid-area: destinationHr;
+    margin: 0 auto;
+    width: 65%;
+  }
+
+  .info_destination_container{
+    grid-area: destinationInnerNav;
+  }
+
+  .crew_container{
+    grid-template: repeat(6, auto) / repeat(2, 1fr);
+    grid-template-areas: 
+    "mainTitle crewImage"
+    "position crewImage"
+    "crewTitle crewImage"
+    "crewText crewImage"
+    "crewNav crewImage"
+    "....... crewImage";
+    padding: 4.7em 10em 0;
+
+  }
+
+  .crew_container > .pages_title{
+    margin-bottom: 8em;
+  }
+
+  .position_crew,
+  .crew_container > .titles_sm,
+  .crew_container > .main_text,
+  .nav_crew
+  {
+    text-align: left;
+    margin: 0
+
+  }
+
+  .crew_container > .main_text{
+    padding: 2em 15em 0 0 ;
+  }
+
+  .nav_crew{
+    padding-top: 7.5em;
+  }
+
+  .img_crew{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .technology_container{
+    grid-template: repeat(6,auto) / auto repeat(2, 1fr);
+    grid-template-areas: 
+    "techPageTitle techPageTitle ."
+    "............. ............. techImg"
+    "techNav techSubtitle techImg"
+    "techNav techTitle techImg"
+    "techNav techText techImg"
+    "....... ........ techImg";
+    padding: 4.7em 0 6em 10em; 
+  }
+
+  .technology_container > .pages_title{
+    grid-area: techPageTitle;
+  }
+
+  .nav_technology{
+    grid-area: techNav;
+    flex-direction: column;
+    margin-right: 2em;
+  }
+
+ 
+
+  .technology_container > .subtitles{
+    grid-area: techSubtitle;
+    text-align: left;
+    margin-bottom: 2em;
+
+  }
+
+  .technology_container > .titles_sm{
+    grid-area: techTitle;
+    text-align: left;
+    margin-bottom: 1em;
+  }
+
+  .technology_container > .main_text{
+    grid-area: techText;
+    text-align: left;
+    padding: 0;
+    padding-right: 17em;
+  }
+
+  .img_technology{
+    grid-area: techImg;
+    width: 100%;
+    padding-left: 5em;
+    /* float: right; */
   }
 }

@@ -23,7 +23,7 @@ export default function Header() {
         handleResize();
 
         window.addEventListener('resize', handleResize);
-      }, [navStatus])
+      }, [])
 
 
 
@@ -55,6 +55,7 @@ export default function Header() {
                 onClick={handleNav}
             />)
             }
+            <hr />
             {navStatus && (
             <nav>
                 <NavLink
