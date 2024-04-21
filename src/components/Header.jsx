@@ -33,7 +33,7 @@ export default function Header() {
 
 
  function handleNav(){
-    setNavStatus(prevStatus=> !prevStatus)
+   !notMobile && setNavStatus(prevStatus=> !prevStatus)
  }
     return (
         <header>
